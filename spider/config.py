@@ -4,6 +4,6 @@ UsersConfig = {
     'proxy': '',
 
     # 知乎用户名和密码
-    'phone': '15670516196',
-    'password': '13517877538',
+    'phone': '',
+    'password': '',
 }
