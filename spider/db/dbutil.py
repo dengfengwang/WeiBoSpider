@@ -3,17 +3,18 @@ Created on 2016年11月30日
 
 @author: Administrator
 '''
+from spider import config
 import  mysql.connector
 from spider.entity.weibouser import weibouser
 from spider.entity.weibocontent import weibocontent
 class dao(object):
     try:
         cnn = mysql.connector.connect(
-                                      user='root',
-                                      password='mysql',
-                                      host='127.0.0.1',
-                                      database='test',
-                                      charset='utf8'
+                                      user=config.DbConfig.get('user'),
+                                      password=config.DbConfig.get('password'),
+                                      host=config.DbConfig.get('host'),
+                                      database=config.DbConfig.get('database'),
+                                      charset=config.DbConfig.get('charset')
                                       )
     except Exception as e:
         print("连接出错")

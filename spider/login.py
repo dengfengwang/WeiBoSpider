@@ -12,6 +12,8 @@ Info
 不同的访问，选择合适的 Host
 3.4 遇到问题，大概是忽略了更换 Host 的问题
 '''
+from spider import config
+
 try:
     import cookielib
 except:
@@ -178,18 +180,13 @@ def login(username, password, pincode):
 #     print(followNum)
 #     print(fanNum)
     
-def getsession(self):
-    username = "15670516196"
-    password = "13517877538"
-    pincode = login_pre(username)
-    login(username, password, pincode)
-    
 def parsePage(self):
     
     pass
 if __name__ == "__main__":
-
-    username = "15670516196"
-    password = "13517877538"
+    print(config.UsersConfig.get('phone'))
+    print(config.UsersConfig.get('password'))
+    username = config.UsersConfig.get('phone')
+    password = config.UsersConfig.get('password')
     pincode = login_pre(username)
     login(username, password, pincode)

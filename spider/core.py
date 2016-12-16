@@ -3,6 +3,7 @@ Created on 2016年11月29日
 
 @author: Administrator
 '''
+from spider import config
 from bs4 import BeautifulSoup
 import requests
 from spider.entity.weibouser import weibouser
@@ -114,6 +115,6 @@ def parseUserHomePage(userurl):
 
 if __name__ == "__main__":
     #http://weibo.cn/u/1851853163+
-    url = "http://weibo.cn/u/5953608036"
+    url = config.UrlConfig.get('url')
     user_Url = url
     parseUserHomePage(url)
